@@ -21,25 +21,34 @@ function typeText(){
 
 // ===== LOVE RAIN =====
 function showLove(){
+
   setInterval(()=>{
+
     const love=document.createElement("div");
     love.innerHTML="❤️";
+
     love.style.position="fixed";
     love.style.left=Math.random()*100+"vw";
     love.style.top="-20px";
-    love.style.fontSize="24px";
+    love.style.fontSize="22px";
+    love.style.pointerEvents="none";
+
     document.body.appendChild(love);
 
+    let pos=0;
+
     let fall=setInterval(()=>{
-      love.style.top=(love.offsetTop+5)+"px";
-      if(love.offsetTop>window.innerHeight){
+      pos+=3;
+      love.style.top=pos+"px";
+
+      if(pos>window.innerHeight){
         love.remove();
         clearInterval(fall);
       }
     },30);
-  },300);
-}
 
+  },800); // ← sebelumnya 300 (terlalu cepat)
+}
 // ===== STAR BACKGROUND =====
 const canvas=document.getElementById("stars");
 const ctx=canvas.getContext("2d");
