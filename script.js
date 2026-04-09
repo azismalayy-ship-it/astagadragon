@@ -1,9 +1,13 @@
 // ===== START PAGE =====
 function start(){
+
   document.getElementById("start").style.display="none";
   document.getElementById("main").style.display="block";
 
-  document.getElementById("music").play();
+  setTimeout(()=>{
+    document.getElementById("music").play();
+  },300);
+
   typeText();
 }
 
