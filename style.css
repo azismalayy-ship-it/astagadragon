@@ -1,11 +1,12 @@
-body {
-  margin:0;
-  height:100vh;
+body{
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(45deg,#ff9a9e,#fad0c4);
-  font-family:Arial;
+  height:100vh;
+}
+
+h1{
+  font-size:clamp(24px,5vw,50px);
 }
 
 .box {
